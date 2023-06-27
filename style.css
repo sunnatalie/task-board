@@ -1,0 +1,170 @@
+:root {
+    --dark: black;
+    --light: #EEE;
+    --purple: #6919ff;
+    --pink: #ba00e9;
+    --blue: #3700dc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'fira sans', sans-serif;
+}
+
+.button {
+    font-size: 1.25 rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.button:active {
+    opacity: 0.6;
+}
+
+input, button, textarea {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: var(--light);
+}
+
+
+/* Title and form */
+
+
+header {
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: var(--pink);
+    margin-bottom: 2rem;
+}
+
+#newTaskForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#newTaskInputs {
+    opacity: 1;
+    background-size: 12px 12px;
+    background-image:  repeating-linear-gradient(0deg, #3700dc, #3700dc 0.7000000000000001px, black 0.7000000000000001px, black);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    width: 60%;
+    font-size: .7rem;
+    color: var(--light);
+    border: 1px solid var(--purple);
+}
+
+#newTaskInput {
+    display: block;
+    width: 100%;
+}
+
+.formInput {
+    color: var(--light);
+    font-size: 1.25 rem;
+}
+
+#newTaskSubmit {
+    color: var(--pink);
+}
+
+#clearForm {
+    color: var(--purple);
+}
+
+
+/* task board */
+
+main {
+    margin: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--purple);
+    min-height: 350px;
+
+}
+
+#taskCards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid var(--pink);
+    transition: 0.3s;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    height: 250px;
+    width: 200px;
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+.card > .button {
+    display: none;
+}
+
+.card:hover > .button{
+    display: block;
+    color: var(--purple);
+    padding: 0px;
+    float: right;
+}
+
+.text > textarea {
+    width: 100%;
+    height: 150px;
+    color: var(--light);
+    padding-top: 1rem;
+}
+
+.text {
+    font-size: .5rem;
+}
+
+.taskSubmissions h2 {
+    font-size: 2.5 rem;
+    font-weight: 300;
+    color: var(--pink);
+    margin: 1rem;
+}
+
+div:empty::before {
+    color: grey;
+    margin: 5rem;
+  }
+  div[data-placeholder]:not([data-placeholder=""]):empty::before {
+    content: attr(data-placeholder);
+  }
+  div:empty::before {
+    content: 'You have no tasks :)';
+  }

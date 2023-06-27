@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    
+    <header>
+        <h1>My Tasks</h1>
+        <form id="newTaskForm">
+            <div id="newTaskInputs">
+                <label>Task:</label>
+                <textarea id="newTaskInput" class="formInput" placeholder="What do you have planned?"></textarea>
+                <label>Due: </label><br>
+                <input type="date" id="newDateInput" class="formInput">
+                <input type="time" id="newTimeInput" class="formInput">
+            </div>
+            
+            <button class="button" type="button" id="newTaskSubmit" onclick="addTask()">Add task</button>
+            <button class="button" type="button" id="clearForm" onclick="clearTaskForm()">Clear fields</button>
+        </form>
+    </header>
+
+    <main>
+        <container class="taskSubmissions" data-placeholder='data- placeholder'>
+            <h2>Task Board</h2>
+
+            <div id="taskCards">
+            </div>
+        </container>
+    </main>
+</body>
+</html>
+
